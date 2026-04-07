@@ -2,7 +2,7 @@
     <section class="py-20 bg-margarita-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-900 mb-4">Galería</h2>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-900 mb-4"><span class="text-margarita-400">G</span>alería</h2>
                 <p class="text-gray-600 text-lg">Un vistazo a tu próximo hogar en Cancún.</p>
             </div>
 
@@ -46,3 +46,34 @@
             </div>
         </div>
     </section>
+     <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/90 flex items-center justify-center p-4" onclick="closeModal()">
+        <img id="modalImage" src="" alt="Full size" class="max-w-full max-h-full rounded-lg shadow-2xl">
+        <button class="absolute top-4 right-4 text-white hover:text-margarita-400 transition">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+    </div>
+    <script is:inline>
+         function openModal(element) {
+            const img = element.querySelector('img');
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            
+            modalImg.src = img.src;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
