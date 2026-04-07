@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@theme {
+  /* Colores personalizados */
+  --color-margarita-50:  #fef2f2;
+  --color-margarita-100: #fee2e2;
+  --color-margarita-200: #fecaca;
+  --color-margarita-300: #fca5a5;
+  --color-margarita-400: #f87171;
+  --color-margarita-500: #ef4444;
+  --color-margarita-600: #dc2626;
+  --color-margarita-700: #b91c1c;
+  --color-margarita-800: #991b1b;
+  --color-margarita-900: #7f1d1d;
+
+  /* Fuentes */
+  --font-serif: 'Playfair Display', serif;
+  --font-sans:  'Inter', sans-serif;
+}
+.fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(185,28,28,0.4));
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .image-hover {
+            transition: transform 0.5s ease;
+        }
+        .image-hover:hover {
+            transform: scale(1.05);
+        }

@@ -1,0 +1,48 @@
+<!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="flower-2" class="w-8 h-8 text-margarita-600"></i>
+                    <span class="font-serif text-2xl font-bold text-gray-900">Las Margaritas</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-gray-700 hover:text-margarita-600 font-medium transition">Inicio</a>
+                    <a href="#nosotros" class="text-gray-700 hover:text-margarita-600 font-medium transition">Nosotros</a>
+                    <a href="#habitaciones" class="text-gray-700 hover:text-margarita-600 font-medium transition">Habitaciones</a>
+                    <a href="#servicios" class="text-gray-700 hover:text-margarita-600 font-medium transition">Servicios</a>
+                    <a href="#ubicacion" class="text-gray-700 hover:text-margarita-600 font-medium transition">Ubicación</a>
+                    <a href="#contacto" class="bg-margarita-600 text-white px-6 py-2 rounded-full font-medium hover:bg-margarita-700 transition shadow-lg hover:shadow-xl">
+                        Reservar
+                    </a>
+                </div>
+
+                <button class="md:hidden p-2 text-gray-700" onclick="toggleMenu()">
+                    <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-white border-t" id="mobile-menu">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#inicio" class="block px-3 py-2 text-gray-700 hover:text-margarita-600 font-medium">Inicio</a>
+                <a href="#nosotros" class="block px-3 py-2 text-gray-700 hover:text-margarita-600 font-medium">Nosotros</a>
+                <a href="#habitaciones" class="block px-3 py-2 text-gray-700 hover:text-margarita-600 font-medium">Habitaciones</a>
+                <a href="#servicios" class="block px-3 py-2 text-gray-700 hover:text-margarita-600 font-medium">Servicios</a>
+                <a href="#ubicacion" class="block px-3 py-2 text-gray-700 hover:text-margarita-600 font-medium">Ubicación</a>
+                <a href="#contacto" class="block px-3 py-2 text-margarita-600 font-bold">Reservar Ahora</a>
+            </div>
+        </div>
+    </nav>
+    <script>
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+    </script>
