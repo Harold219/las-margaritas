@@ -77,3 +77,32 @@
             </div>
         </div>
     </section>
+    <script is:inline>
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const form = event.target;
+
+    const nombre     = form.querySelector('input[type="text"]').value;
+    const entrada    = form.querySelectorAll('input[type="date"]')[0].value;
+    const salida     = form.querySelectorAll('input[type="date"]')[1].value;
+    const habitacion = form.querySelector('#roomSelect').value;
+    const mensaje    = form.querySelector('textarea').value;
+
+    // Formato de fechas legible
+    const fmt = (d) => d ? new Date(d + 'T12:00:00').toLocaleDateString('es-MX', { day: '2-digit', month: 'long', year: 'numeric' }) : '—';
+
+    const texto = encodeURIComponent(
+      `¡Hola! Me gustaría hacer una reserva en Las Margaritas 🌼\n\n` +
+      `👤 *Nombre:* ${nombre}\n` +
+      `📅 *Entrada:* ${fmt(entrada)}\n` +
+      `📅 *Salida:* ${fmt(salida)}\n` +
+      `🛏 *Habitación:* ${habitacion || 'Sin especificar'}\n` +
+      `💬 *Mensaje:* ${mensaje || 'Sin comentarios adicionales'}`
+    );
+
+    const telefono = '529841055525'; // número sin + ni espacios
+
+    window.open(`https://wa.me/${telefono}?text=${texto}`, '_blank');
+  }
+</script>
